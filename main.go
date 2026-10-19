@@ -30,6 +30,10 @@ func main() {
 	{
 		api.POST("/register", authHandler.Register)
 		api.GET("/users", authHandler.GetAllUsers) // Tambahkan endpoint untuk mengambil semua user
+		api.GET("/users/:id", authHandler.GetUserByID)
+		api.PUT("/users/:id", authHandler.UpdateUser)
+		api.DELETE("/users/:id", authHandler.DeleteUser)
+		api.POST("/login", authHandler.Login)
 	}
 
 	// 6. Jalankan Server di Port 8080
